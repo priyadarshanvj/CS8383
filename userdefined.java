@@ -1,31 +1,32 @@
 import java.util.*;
-class amt extends Exception
+class NegativeAmtException extends Exception
 {
-int c;
-amt(String msg)
+String msg;
+NegativeAmtException(String msg)
 {
-this.c=c;
+this.msg=msg;
 }
-public int toint()
+public String toString()
 {
-c=a/b;
-return c;
+return msg;
 }
 }
 public class userdefined
 {
 public static void main(String[] args)
 {
-    int a=1,b=0;
+Scanner s=new Scanner(System.in);
+System.out.print("Enter Amount:");
+int a=s.nextInt();
 try
 {
-if(b<0)
+if(a<0)
 {
-throw new amt("Invalid ");
+throw new NegativeAmtException("Invalid Amount");
 }
-System.out.println("Working");
+System.out.println("Amount Deposited");
 }
-catch(amt e)
+catch(NegativeAmtException e)
 {
 System.out.println(e);
 }
